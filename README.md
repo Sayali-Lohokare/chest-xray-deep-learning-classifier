@@ -28,6 +28,7 @@ process, and final results.
   splits and image paths.
 - `Chest-Xray-Research-Paper.pdf` — full written report covering background, dataset, methodology,
   results, and ethical considerations.
+-  `Chest-Xray-Disease-Classification.pptx` — presentation summary of the project, methodology, and results.
 
 ## About the dataset
 
@@ -64,16 +65,24 @@ several optimisation steps (data augmentation, early stopping, batch-size tuning
 the test set with accuracy and AUC plots.
 
 ## Results summary
-------------------------------------------------------
+
 | Stage                              | Test Accuracy |
 |------------------------------------|---------------|
 | Initial baseline                   | 57%           |
 | + Augmentation & extended training | 66%           |
 | + Fixed steps & early stopping     | 73%           |
 | Final tuned model                  | 76%           |
-------------------------------------------------------
+
 
 Final model: macro AUC ≈ 0.60 across 14 pathologies, macro F1-score ≈ 0.29 (class-specific thresholds).
+
+![Accuracy improvements through optimisation](accuracy_improvements.png)
+
+## Example output: Grad-CAM explainability
+
+The heatmaps below show which regions of the X-ray the model focused on when predicting each pathology — a qualitative check that the model is using clinically plausible areas rather than spurious artefacts.
+
+![Grad-CAM example](gradcam_example.png)
 
 ## Note
 
